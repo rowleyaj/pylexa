@@ -42,7 +42,7 @@ def is_cert_chain_url_valid(url):
 def is_within_time_tolerance(timestamp):
     tolerance = 150
     try:
-        request_time = parser.parse(timestamp)
+        request_time = parser.parse(str(timestamp))
     except (AttributeError, ValueError) as ex:
         return False
     now = datetime.now(tz.tzutc())
